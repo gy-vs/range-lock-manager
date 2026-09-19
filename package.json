@@ -1,0 +1,27 @@
+{
+  "name": "interval-lock",
+  "version": "0.1.0",
+  "description": "In-process shared/exclusive interval lock manager with writer-fair queueing and lease upgrades",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.test.json && node --test dist-test/test/",
+    "typecheck": "tsc -p tsconfig.test.json --noEmit && tsc -p tsconfig.typecheck.json"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.4.0"
+  }
+}
